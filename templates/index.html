@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Credit Review Analysis Chatbot
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for(
+            'static',
+            filename='css/style.css'
+        ) }}"
+    >
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <header class="header">
+
+        <div>
+
+            <h1>
+                Credit Review Analysis
+            </h1>
+
+            <p>
+                AI Credit Analysis Assistant
+            </p>
+
+        </div>
+
+        <button
+            id="endChatButton"
+            class="end-button"
+        >
+            End Chat
+        </button>
+
+    </header>
+
+
+    <main
+        id="chatContainer"
+        class="chat-container"
+    >
+
+    </main>
+
+
+    <div
+        id="typingIndicator"
+        class="typing hidden"
+    >
+        AI is analyzing...
+    </div>
+
+
+    <form
+        id="chatForm"
+        class="chat-form"
+    >
+
+        <input
+            type="text"
+            id="messageInput"
+            placeholder="Ask a credit review question..."
+            autocomplete="off"
+            required
+        >
+
+        <button
+            type="submit"
+            id="sendButton"
+        >
+            Send
+        </button>
+
+    </form>
+
+
+    <div
+        id="endedMessage"
+        class="ended-message hidden"
+    >
+        This chat has ended.
+        Start a new chat to continue.
+    </div>
+
+</div>
+
+
+<script
+    src="{{ url_for(
+        'static',
+        filename='js/chat.js'
+    ) }}"
+></script>
+
+</body>
+
+</html>
